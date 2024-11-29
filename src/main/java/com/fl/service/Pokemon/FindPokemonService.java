@@ -25,6 +25,18 @@ public class FindPokemonService {
         this.restTemplate = restTemplate;
     }
 
+    public List<Pokemon> findAllPokemons() {
+        return findPokemonRepository.findAll();
+    }
+
+    public List<Pokemon> findAllByIdSet(String idSet){
+        return findPokemonRepository.findAllByIdSet(idSet);
+    }
+
+    public Pokemon findById(String id) {
+        return findPokemonRepository.findById(id);
+    }
+
     public Pokemon findByName(String name) {
         return findPokemonRepository.findByName(name)
                 .orElseThrow(() -> new NotFoundException("Carte " + name));

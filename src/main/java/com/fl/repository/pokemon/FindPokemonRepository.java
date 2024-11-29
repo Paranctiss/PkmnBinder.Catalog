@@ -12,4 +12,5 @@ public interface FindPokemonRepository extends MongoRepository<Pokemon, Integer>
 
     Optional<Pokemon> findByName(String name);
     List<Pokemon> findAllByIdSet(String idSet);
+    Pokemon findById(String id);
 }
