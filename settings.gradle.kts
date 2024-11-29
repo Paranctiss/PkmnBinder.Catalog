@@ -1,1 +1,1 @@
-rootProject.name = "PkmnBinder"
+rootProject.name = "PkmnBinder.Catalog"
