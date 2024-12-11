@@ -14,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FindExtensionService {
@@ -36,6 +37,11 @@ public class FindExtensionService {
         return findExtensionRepository.findByName(name)
                 .orElseThrow(() -> new NotFoundException("Extension " + name));
     }
+
+    public Optional<Extension> findById(String id) {
+        return findExtensionRepository.findById(id);
+    }
+
 
     public Extension addExtension(Extension extension) {
         return findExtensionRepository.save(extension);

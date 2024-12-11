@@ -2,12 +2,14 @@ package com.fl.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "Extension")
 public class Extension {
 
     @Id
     private String _id;
+    @Field("id")
     private String id;
     private String idSerie;
     private String name;

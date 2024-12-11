@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface FindExtensionRepository extends MongoRepository<Extension, String> {
+public interface FindExtensionRepository extends MongoRepository<Extension, Integer> {
     Optional<Extension> findByName(String name);
+    Optional<Extension> findById(String id);
 }

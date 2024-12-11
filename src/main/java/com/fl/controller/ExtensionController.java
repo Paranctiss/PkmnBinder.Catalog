@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/extensions")
@@ -26,9 +27,15 @@ public class ExtensionController {
         return ResponseEntity.ok(extensions);
     }
 
-    @GetMapping("/{name}")
+    /* @GetMapping("/{name}")
     public ResponseEntity<Extension> getExtensionByName(@PathVariable String name) {
         Extension extension = extensionService.findByName(name);
+        return ResponseEntity.ok(extension);
+    } */
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<Extension>> getExtensionByName(@PathVariable String id) {
+        Optional<Extension> extension = extensionService.findById(id);
         return ResponseEntity.ok(extension);
     }
 
